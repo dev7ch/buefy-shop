@@ -10,22 +10,28 @@ Demo [production](https://buefy-shop.now.sh) - [dev](https://buefy-shop-dev.now.
 
 Inspired by [sample-vue-shop](https://github.com/sdras/sample-vue-shop)
 
-## Build Setup
+## Requirements  
+- yarn
+- npm >= v6
 
-``` bash
-# install dependencies
-$ yarn install
+## Installation
 
-# serve with hot reload at localhost:3000
-# service worker is disabled in dev
-$ yarn run dev
+`yarn install --ignore-engines`  
 
-# build for production and launch server
-$ yarn run build
-$ yarn start
+> there is an issue with node v10, temporary probably
 
-# generate static project
-$ yarn run generate
-```
+### serve with hot reload at localhost:3000
+
+`yarn run dev`
+
+> service worker is disabled in dev
+
+### build for production and launch server
+`yarn run build`  
+
+`yarn start`
+
+### generate static project
+`yarn run generate`
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).

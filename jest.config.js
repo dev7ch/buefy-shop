@@ -9,11 +9,11 @@ module.exports = {
     '.*\\.(vue)$': '<rootDir>/node_modules/vue-jest'
   },
   transformIgnorePatterns: [
-    '<roodDir>/node_modules/(?!@swish)'
+    '<rootDir>/node_modules/(?!@swish)'
   ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
-    '\\.(css|styl)$': 'identity-obj-proxy'
+    '\\.(css|style)$': 'identity-obj-proxy'
   },
   testResultsProcessor: process.env.CI ? 'jest-junit' : undefined,
   testPathIgnorePatterns: ['<rootDir>/__tests__/__mocks__'],

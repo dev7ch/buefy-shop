@@ -18,9 +18,16 @@ dist
 .vscode
 
 # Generated files
+
 static/manifest*.json
 static/sw.js
 static/workbox-sw*.js
-
 coverage
 .env
+.now-secrets.json
+yarn.lock
+package-lock.json
+
+#OS
+.DS_Store
+now-secrets.json
