@@ -1,7 +1,6 @@
 <template lang="pug">
   .content
     transition(name="fade")
-
       form.payment(v-if="status !== 'failure'", @submit.prevent='pay')
         h3 Please enter your payment details:
 

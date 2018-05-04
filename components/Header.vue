@@ -11,7 +11,7 @@
           .field.is-grouped
             p.control
               a.button.is-light(target="_blank",
-                                href="https://github.com/14nrv/buefy-shop",
+                                href="https://github.com/dev7ch",
                                 rel="noopener")
                 span.icon
                   i.fa.fa-github
@@ -22,6 +22,12 @@
                   .cartcount(v-if="total > 0") {{ total }}
                   i.fa.fa-shopping-cart
                 span Cart
+            p.control
+              nuxt-link.button.is-light(exact, :to="{name: 'user'}")
+                span.icon.cartitem
+                  //.cartcount(v-if="total > 0") {{ total }}
+                  i.fa.fa-user
+                span Login
 </template>
 
 <script>

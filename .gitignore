@@ -25,9 +25,12 @@ static/workbox-sw*.js
 coverage
 .env
 .now-secrets.json
-yarn.lock
+now-secrets.json
 package-lock.json
+
+#Firebase
+.firebaserc
 
 #OS
 .DS_Store
-now-secrets.json
+.idea/*

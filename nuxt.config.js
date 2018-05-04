@@ -14,7 +14,7 @@ const {
 const modules = [
   '@nuxtjs/pwa'
 ]
-const isNotProdEnv = NODE_ENV !== 'production'
+const isNotProdEnv = NODE_ENV !== 'prod'
 isNotProdEnv && modules.push('@nuxtjs/dotenv')
 
 module.exports = {
