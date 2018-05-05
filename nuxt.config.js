@@ -12,7 +12,7 @@ const {
 } = process.env
 
 const modules = [
-  '@nuxtjs/pwa'
+  '@nuxtjs/pwa', { icon: false }
 ]
 const isNotProdEnv = NODE_ENV !== 'prod'
 isNotProdEnv && modules.push('@nuxtjs/dotenv')
@@ -38,7 +38,9 @@ module.exports = {
   ** Headers
   ** Common headers are already provided by @nuxtjs/pwa preset
   */
-  head: {},
+  head: {
+
+  },
   /*
   ** Customize the progress-bar color
   */
@@ -52,10 +54,12 @@ module.exports = {
   /*
   ** Modules
   */
+
   modules,
   plugins: [
     '~plugins/firebase',
     { src: '~plugins/veeValidate', ssr: false },
+    { src: '~/plugins/auth', ssr: false},
     { src: '~plugins/lazysizes', ssr: false }
   ],
   env: {

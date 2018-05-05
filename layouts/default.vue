@@ -1,20 +1,20 @@
-<template lang="pug">
-  section.hero.is-fullheight
-    .hero-head
-      app-header
-    .hero-body
-      nuxt
-    .hero-footer
-      .container
-        p Made with love from Paris
-    </nav>
+<template>
+    <div class="hero.is-fullheight">
+        <app-header></app-header>
+        <nuxt/>
+    </div>
 </template>
+
 
 <script>
 import Header from '@/components/Header.vue'
+import { mapState } from 'vuex'
 
 export default {
-  components: { AppHeader: Header }
+    components: { AppHeader: Header },
+    computed: mapState([
+        'user'
+    ])
 }
 </script>
 

@@ -3,6 +3,7 @@ import { firebaseMutations } from 'vuexfire'
 import pkg from '@/store/modules/package'
 import cart from '@/store/modules/cart'
 import product from '@/store/modules/product'
+import account from '@/store/modules/account'
 
 const store = () => {
   return new Vuex.Store({
@@ -10,7 +11,8 @@ const store = () => {
     modules: {
       cart,
       product,
-      pkg
+      pkg,
+      account
     },
     mutations: {
       ...firebaseMutations

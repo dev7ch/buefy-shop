@@ -2,6 +2,14 @@
   .container
     .section
       app-hero
+    .section
+      div(class="field is-grouped is-grouped-centered")
+          p(class="control")
+            nuxt-link(v-if="user != undefined" class="button is-link is-outlined" to="/account" v-text="user.email")
+            nuxt-link(v-else class="button is-link" to="/account/login") Login
+          p(class="control")
+            nuxt-link(v-if="user === undefined || anonymus" class="button is-link is-outlined" to="/account/signup") Sign Up
+            nuxt-link(v-else class="button is-link is-outlined" to="/account/settings") Profile Settings
     .section.capsule
       app-sidebar(:pricerange.sync="highprice")
       transition-group.content(name="items" tag="div")
