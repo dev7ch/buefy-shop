@@ -7,7 +7,7 @@ module.exports = ({db, express, bcrypt, jwt, config, google}) => {
     if (!email || !password) return res.status(400).json({type: 'error', message: 'email and password fields are essential for authentication.'})
     db.query('select * from `users` where `email`=?', email, (error, results) => {
       if (error) return res.status(500).json({type: 'error', message: 'db error', error})
-      if (results.length == 0) return res.status(403).json({type: 'error', message: 'User with provided email not found in database.'})
+      if (results.length === 0) return res.status(403).json({type: 'error', message: 'User with provided email not found in database.'})
       const user = results[0]
       bcrypt.compare(password, user.password, (error, result) => {
         if (error) return res.status(500).json({type: 'error', message: 'bcrypt error', error})
@@ -50,10 +50,10 @@ module.exports = ({db, express, bcrypt, jwt, config, google}) => {
     }, (error, response) => {
       if (error) return res.status(500).json({type: 'error', error})
       const emails = (response.data || {}).emails
-      if (!emails || emails.length == 0) return res.status(500).json({type: 'error', message: 'User email not found in google+.'})
+      if (!emails || emails.length === 0) return res.status(500).json({type: 'error', message: 'User email not found in google+.'})
       db.query('select * from `users` where `email`=?', emails[0].value, (error, results) => {
         if (error) return res.status(500).json({type: 'error', message: 'db error', error})
-        if (results.length == 0) return res.status(403).json({type: 'error', message: 'User with email from google+ not found in database.'})
+        if (results.length === 0) return res.status(403).json({type: 'error', message: 'User with email from google+ not found in database.'})
         const user = results[0]
         return res.json({
           type: 'success',

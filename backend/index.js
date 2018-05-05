@@ -21,8 +21,7 @@ try {
     res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, x-access-token')
     if (req.method === 'OPTIONS') {
       res.sendStatus(200)
-    }
-    else {
+    } else {
       next()
     }
   })
