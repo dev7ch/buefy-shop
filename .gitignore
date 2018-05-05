@@ -18,9 +18,19 @@ dist
 .vscode
 
 # Generated files
+
 static/manifest*.json
 static/sw.js
 static/workbox-sw*.js
-
 coverage
 .env
+.now-secrets.json
+now-secrets.json
+package-lock.json
+
+#Firebase
+.firebaserc
+
+#OS
+.DS_Store
+.idea/*
