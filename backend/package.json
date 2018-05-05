@@ -1,0 +1,26 @@
+{
+  "name": "nuxt-auth-google",
+  "version": "1.0.0",
+  "description": "The simple backend for the nuxt-auth",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Silvan",
+    "email": "silvan@dev7.ch"
+  },
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dev7ch/buefy-shop"
+  },
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "googleapis": "^25.0.0",
+    "jsonwebtoken": "^8.1.1",
+    "mysql": "^2.15.0"
+  }
+}
