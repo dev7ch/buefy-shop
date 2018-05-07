@@ -7,18 +7,17 @@
     .hero-footer
       .container
         p Made with love from Paris
-
 </template>
 
 
 <script>
     import Header from '@/components/Header.vue'
-
+    import { mapState } from 'vuex'
     export default {
-        components: { AppHeader: Header },
-        /*computed: mapState([
+        computed: mapState([
             'user'
-        ])*/
+        ]),
+        components: { AppHeader: Header },
     }
 </script>
 

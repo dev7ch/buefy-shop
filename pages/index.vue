@@ -5,10 +5,10 @@
     .section
       div(class="field is-grouped is-grouped-centered")
           p(class="control")
-            nuxt-link(v-if="user != undefined" class="button is-link is-outlined" to="/account" v-text="user.email")
+            nuxt-link(v-if="user && user.length > 1" class="button is-link is-outlined" to="/account" v-text="user.email")
             nuxt-link(v-else class="button is-link" to="/account/login") Login
           p(class="control")
-            nuxt-link(v-if="user === undefined || anonymus" class="button is-link is-outlined" to="/account/signup") Sign Up
+            nuxt-link(v-if="user && user.length > 1" class="button is-link is-outlined" to="/account/signup") Sign Up
             nuxt-link(v-else class="button is-link is-outlined" to="/account/settings") Profile Settings
     .section.capsule
       app-sidebar(:pricerange.sync="highprice")
@@ -21,6 +21,7 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
+import { mapState } from 'vuex'
 import Hero from '@/components/Hero.vue'
 import Card from '@/components/Card.vue'
 import Sidebar from '@/components/Sidebar.vue'
@@ -33,7 +34,11 @@ export default {
     AppCard: Card,
     AppSidebar: Sidebar
   },
+  middleware: [],
   computed: {
+    ...mapState({
+        user: state => state.currentUser, // or null in user not authenticated
+    }),
     ...mapGetters(['products', 'highprice'])
   },
   created () {

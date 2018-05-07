@@ -2,9 +2,10 @@ import firebase from 'firebase'
 
 export default function ({
   isServer,
+  store,
   redirect
 }) {
-  if (isServer && !firebase.apps.length) {
-    redirect('/account/login')
+  if (!isServer && (store.getters.isAuthenticated && firebase.auth().currentUser)) {
+    return redirect('/account')
   }
 }

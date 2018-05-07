@@ -12,9 +12,9 @@ const {
 } = process.env
 
 const modules = [
-  '@nuxtjs/pwa', { icon: false }
+  '@nuxtjs/pwa'
 ]
-const isNotProdEnv = NODE_ENV !== 'prod'
+const isNotProdEnv = NODE_ENV !== 'production'
 isNotProdEnv && modules.push('@nuxtjs/dotenv')
 
 module.exports = {
@@ -31,7 +31,9 @@ module.exports = {
     ],
     analyze: ANALYZE,
     vendor: [
-      'firebase'
+      'firebase',
+      'firebase-auth',
+      'vuexfire'
     ]
   },
   /*
@@ -57,7 +59,7 @@ module.exports = {
   plugins: [
     '~plugins/firebase',
     { src: '~plugins/veeValidate', ssr: false },
-    {src: '~/plugins/auth', ssr: false},
+    { src: '~plugins/auth', ssr: false },
     { src: '~plugins/lazysizes', ssr: false }
   ],
   env: {

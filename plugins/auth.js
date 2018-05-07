@@ -1,4 +1,4 @@
-import firebaseConfig from '~/firebase'
+import firebaseConfig from '~/firebase-setup/config'
 import firebase from 'firebase'
 
 if (!firebaseConfig) {
