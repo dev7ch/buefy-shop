@@ -1,5 +1,5 @@
 <template lang="pug">
-  section.hero.is-fullheight
+  section.hero
     .hero-head
       app-header
     .hero-body
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import Header from '@/components/Header.vue'
+import Header from '@/components/Header'
 
 export default {
   components: { AppHeader: Header }
@@ -20,12 +20,25 @@ export default {
 
 <style lang="stylus">
   @require '../node_modules/bulma/css/bulma.min.css'
-  @require '../node_modules/font-awesome/css/font-awesome.min.css'
+  @require '../node_modules/@fortawesome/fontawesome-free/css/all.css'
   @require './css/_transition'
   @require './css/_slider'
 
+  html
+    overflow-y auto
+
   .section
-    padding 3rem 0
+    padding 3rem 0 1.5rem
+
+  .hero
+    min-height 100vh
+
+    .hero-body
+      flex 1
+
+    .hero-footer
+      margin-bottom 0.5rem
+
   .is-light
     background-color #f5f5f5
     color #363636

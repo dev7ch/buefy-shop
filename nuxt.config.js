@@ -8,14 +8,19 @@ const {
   FB_STORAGE_BUCKET,
   FB_MESSAGE_SENDER_ID,
   STRIPE_PUBLISHABLE_KEY,
-  STRIPE_URL
+  STRIPE_URL,
+  GA_ID
 } = process.env
 
 const modules = [
   '@nuxtjs/pwa'
 ]
 const isNotProdEnv = NODE_ENV !== 'production'
-isNotProdEnv && modules.push('@nuxtjs/dotenv')
+modules.push(
+  isNotProdEnv
+    ? '@nuxtjs/dotenv'
+    : ['@nuxtjs/google-analytics', { id: GA_ID }]
+)
 
 module.exports = {
   /*
@@ -31,7 +36,8 @@ module.exports = {
     ],
     analyze: ANALYZE,
     vendor: [
-      'firebase'
+      'firebase/app',
+      'firebase/database'
     ]
   },
   /*
@@ -56,7 +62,8 @@ module.exports = {
   plugins: [
     '~plugins/firebase',
     { src: '~plugins/veeValidate', ssr: false },
-    { src: '~plugins/lazysizes', ssr: false }
+    { src: '~plugins/lazysizes', ssr: false },
+    { src: '~plugins/localStorage.js', ssr: false }
   ],
   env: {
     FB_DATABASE_URL,
